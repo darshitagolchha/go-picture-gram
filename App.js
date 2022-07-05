@@ -45,17 +45,17 @@ export default function App() {
   // );
 
   useEffect(() => {
-    let t;
+    let instance;
     console.log(show);
     if (show) {
-      t = setInterval(() => {
+      instance = setInterval(() => {
         setCurrent((c) => (c === data.length - 1 ? 0 : c + 1));
       }, 2000);
     } else {
-      clearInterval(t);
+      clearInterval(instance);
     }
     return () => {
-      clearInterval(t);
+      clearInterval(instance);
     };
   }, [show]);
 
